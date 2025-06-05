@@ -146,6 +146,124 @@
             margin-left: 280px;
         }
     </style>
+
+    <style>
+    table {
+      width: 90%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #ddd;
+    }
+    h2, h3 {
+      text-align: center;
+    }
+    figure {
+      text-align: center;
+      margin: 20px auto;
+    }
+    img {
+      width: 60%;
+      max-width: 600px;
+    }
+    figcaption {
+      font-style: italic;
+    }
+  </style>
+
+ <style>
+        body, html {
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: bold;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #2a2a2a;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            white-space: pre-line;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 15px;
+        }
+
+      .formula {
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  background-color: #eef4f8;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #004080;
+  font-weight: bold;
+}
+
+.calculation {
+  background-color: #f4f8fb;
+  border-left: 4px solid #004080;
+  padding: 10px 15px;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+.angle-calc {
+  background-color: #f9fbfd;
+  border: 1px solid #d1dce6;
+  border-radius: 6px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+}
+
+.angle-calc h4 {
+  margin-top: 0;
+  color: #003366;
+  font-weight: bold;
+}
+
+    </style>
+
+    
 </head>
 
 <body>
@@ -159,6 +277,14 @@
                 <li><a href="#marco">Marco Teórico</a></li>
                 <li><a href="#procedimiento">Procedimiento</a></li>
                 <li><a href="#etapas">Etapas del proyecto</a></li>
+                <li><a href="#eléctrico">Diseño del circuito eléctrico</a></li>
+                <li><a href="#aerodinámico">Analisis aerodinámico</a></li>
+                <li><a href="#grafica">Analisis De Las Graficas</a></li>
+                <li><a href="#datos ">Datos de Relevancia en el Funcionamiento y Operación del Sistema de Control de Vuelo en un ATR 72-600</a></li>
+                <li><a href="#función">Funcionamiento y Análisis del Control</a></li>
+                <li><a href="#resultado">Discusión de Resultados</a></li>
+
+
             </ul>
         </div>
     </div>
@@ -181,13 +307,14 @@
       <li><a href="#marco">Marco Teórico</a></li>
       <li><a href="#procedimiento">Procedimiento</a></li>
       <li><a href="#etapas">Etapas del proyecto</a></li>
+      <li><a href="#eléctrico">Diseño del circuito eléctrico</a></li>
     </ul>
   </div>
 </div>
 
 
     <div class="container">
-        <h1>Modelo de las superficies de control de vuelo y luces principales de un ATR-72</h1>
+        <h1>Modelo de las superficies de control de vuelo y luces principales de un ATR-72-600</h1>
        <h2 id="intro">INTRODUCTION</h2>
         <p>Para lograr un vuelo seguro y eficiente es fundamental contar con un sistema adecuado para controlar la aeronave, en este caso el ATR 72-600. Esto se consigue mediante los sistemas de control de vuelo, los cuales están conformados por un conjunto de superficies que trabajan juntas para dirigir y estabilizar la aeronave. Estas se dividen en tres grupos: superficies primarias (alerones, elevadores y timón), superficies secundarias (aletas de compensación) y superficies de alta sustentación (flaps y slats).</p>
 
@@ -270,7 +397,7 @@ Como se puede ver en la figura 4, el sistema está compuesto por 3 servos, cada 
 <img src="ATR 8.png" alt="Imagen 1" />
 <p><span class="fig-caption">Fig. 8. Alerón izquierdo mientras gira hacia la izquierda.</span></p>
 
-<h2>Diseño del circuito eléctrico</h2>
+<h2 id="eléctrico">Diseño del circuito eléctrico</h2>
 <img src="ATR 9.png" alt="Imagen 1" />
 <p><span class="fig-caption">Fig. 9. Diagrama del circuito eléctrico encargado de las luces del modelo.</span></p>
 
@@ -332,19 +459,382 @@ Como se puede ver en la figura 4, el sistema está compuesto por 3 servos, cada 
     </p>
 
 
-<h2>Pruebas de funcionamiento</h2>
+<h2 id="aerodinámico">Analisis aerodinámico</h2>
 
-<p>(Aquí se pueden detallar las pruebas realizadas al sistema y sus resultados.)</p>
+<p>El análisis aerodinámico realizado sobre un modelo a escala del avión ATR 72 utilizando el software XFLR5. Este análisis tiene como objetivo evaluar el comportamiento del flujo de aire alrededor de la aeronave, así como determinar sus coeficientes aerodinámicos clave, distribuciones de presión, y eficiencia general en vuelo estacionario.</p>
+<p>El modelo utilizado en el análisis ha sido dimensionado para un entorno de simulación, con condiciones específicas que incluyen un ángulo de ataque de 6° y una velocidad del flujo de entrada (V de 16.0 m/s). Se han aplicado condiciones ideales de flujo incompresible e invíscido para establecer una línea base de comparación.</p>
+<p>A continuación, se presenta la información detallada del modelo, los resultados obtenidos en términos de coeficientes aerodinámicos, visualización del flujo sobre la aeronave, y un conjunto de gráficas que describen el comportamiento de sustentación, resistencia y momento con respecto al ángulo de ataque. Finalmente, se incluyen observaciones técnicas y recomendaciones para optimizar el diseño del modelo en función de los resultados obtenidos.</p>
+
+<h2>Tabla 1. Parámetros del Modelo</h2>
+<figure>
+  <img src="ATR 10.png" alt="Modelo Simulado ATR 72-600"><img src="ATR 11.png" alt="Tipo de NACA del ATR 72-600">
+  <figcaption>Fig. 10. Representación del Modelo Simulado ATR 72-600.</figcaption>
+</figure>
+
+<figure>
+  <img src="ATR 12.png" alt="Tipo de NACA del ATR 72-600"><img src="ATR 13.png" alt="Tipo de NACA del ATR 72-600">
+  <figcaption>Fig. 11. Representación del Tipo de NACA del ATR 72-600.</figcaption>
+</figure>
+
+<table>
+  <tr><th>Parámetro</th><th>Valor</th></tr>
+  <tr><td>Nombre del modelo</td><td>ATR 72-600</td></tr>
+  <tr><td>Velocidad del viento (V∞)</td><td>16.0 m/s</td></tr>
+  <tr><td>Ángulo de ataque (α)</td><td>6.0°</td></tr>
+  <tr><td>Masa total</td><td>2.0 kg</td></tr>
+  <tr><td>Envergadura del ala</td><td>0.19 m</td></tr>
+  <tr><td>Longitud total del avión</td><td>0.48 m</td></tr>
+  <tr><td>Longitud del elevador horizontal</td><td>0.15 m</td></tr>
+  <tr><td>Longitud del rudder</td><td>0.08 m</td></tr>
+  <tr><td>Área alar estimada</td><td>0.0152 m²</td></tr>
+  <tr><td>Cuerda media aerodinámica (MAC)</td><td>0.008 m</td></tr>
+  <tr><td>Centro aerodinámico (XCP)</td><td>0.020 m</td></tr>
+  <tr><td>Centro de presiones (ZCP)</td><td>-0.024 m</td></tr>
+  <tr><td>Centro de presión neutro (XNP)</td><td>0.0025 m</td></tr>
+  <tr><td>Centro de gravedad (XCG)</td><td>0.000 m</td></tr>
+  <tr><td>Sweep en raíz</td><td>5.262°</td></tr>
+  <tr><td>Elementos de malla</td><td>809</td></tr>
+</table>
+
+<h2>Tabla 2. Valores de Coeficientes Aerodinámicos para -6°</h2>
+<figure>
+  <img src="ATR 14.png" alt="Tipo de NACA del ATR 72-600">
+  <figcaption>Fig. 12. Gráficas de Representación de los Coeficientes.</figcaption>
+</figure>
+<table>
+  <tr><th>Parámetro</th><th>Valor</th></tr>
+  <tr><td>CL</td><td>-1.21329</td></tr>
+  <tr><td>CD</td><td>0.09302</td></tr>
+  <tr><td>CL/CD</td><td>-13.044</td></tr>
+  <tr><td>Cm</td><td>2.97596</td></tr>
+  <tr><td>Ch/Cl</td><td>-0.04555</td></tr>
+  <tr><td>Cn</td><td>0.02724</td></tr>
+  <tr><td>Eficiencia Oswald (e)</td><td>0.614</td></tr>
+</table>
+
+<h2>Tabla 3. Valores de Coeficientes Aerodinámicos para 0°</h2>
+<<figure>
+  <img src="ATR 15.png" alt="Tipo de NACA del ATR 72-600">
+  <figcaption>Fig. 13. Gráficas de Representación de los Coeficientes.</figcaption>
+</figure>
+<table>
+  <tr><th>Parámetro</th><th>Valor</th></tr>
+  <tr><td>CL</td><td>-0.76019</td></tr>
+  <tr><td>CD</td><td>0.03801</td></tr>
+  <tr><td>CL/CD</td><td>-20.000</td></tr>
+  <tr><td>Cm</td><td>1.9311</td></tr>
+  <tr><td>Ch/Cl</td><td>-0.03643</td></tr>
+  <tr><td>Cn</td><td>0.02331</td></tr>
+  <tr><td>Eficiencia Oswald (e)</td><td>0.590</td></tr>
+</table>
+
+<h2>Tabla 4. Valores de Coeficientes Aerodinámicos para 6°</h2>
+<figure>
+  <img src="ATR 16.png" alt="Tipo de NACA del ATR 72-600">
+  <figcaption>Fig. 14. Gráficas de Representación de los Coeficientes.</figcaption>
+</figure>
+<table>
+  <tr><th>Parámetro</th><th>Valor</th></tr>
+  <tr><td>CL</td><td>-0.29005</td></tr>
+  <tr><td>CD</td><td>0.00771</td></tr>
+  <tr><td>CL/CD</td><td>-37.605</td></tr>
+  <tr><td>Cm</td><td>0.825</td></tr>
+  <tr><td>Ch</td><td>0.000</td></tr>
+  <tr><td>Cn</td><td>0.1896</td></tr>
+  <tr><td>Eficiencia Oswald (e)</td><td>0.423</td></tr>
+</table>
+
+
+<h2>Tabla 5. Visualización del Flujo para 6°</h2>
+<figure>
+  <img src="ATR 17.png" alt="Flujo simulado"><img src="ATR 18.png" alt="Flujo simulado">
+  <figcaption>Fig. 15. Flujo en la Simulación para el Modelo ATR 72-600.</figcaption>
+</figure>
+<table>
+  <tr><th>Observación</th><th>Detalle</th></tr>
+  <tr><td>Tipo de flujo</td><td>Ordenado y simétrico alrededor del avión</td></tr>
+  <tr><td>Cp</td><td>Distribución adecuada, mayor (negativo) en el extradós</td></tr>
+  <tr><td>Interacción</td><td>Downwash evidente entre el ala y el estabilizador horizontal</td></tr>
+</table>
+
+
+<h2 id="grafica">Analisis De Las Graficas</h2>
+<figure>
+  <img src="ATR 19.png" alt="Gráficas generales">
+  <figcaption>Fig. 16. Gráficas de Representación de los Coeficientes.</figcaption>
+</figure>
+
+<h2>Tabla 6. CL vs CD</h2>
+<table>
+  <tr><td>Relación típica entre sustentación y resistencia.</td></tr>
+  <tr><td>A mayor CL, también aumenta el CD.</td></tr>
+  <tr><td>Curva suavemente creciente: buena eficiencia aerodinámica.</td></tr>
+  <tr><td>Buena sustentación con baja resistencia.</td></tr>
+</table>
+
+<h2>Tabla 7. CL vs Ángulo de Ataque α</h2>
+<table>
+  <tr><td>Relación lineal clara entre CL y α.</td></tr>
+  <tr><td>No hay pérdida hasta al menos α = 12°.</td></tr>
+  <tr><td>Buen comportamiento para vuelo estable.</td></tr>
+  <tr><td>Fórmula: CL = CL₀ + dCL/dα (α - α₀)</td></tr>
+</table>
+
+<h2>Tabla 8. Cm vs Ángulo de Ataque α</h2>
+<table>
+  <tr><td>Pendiente negativa de Cm: estabilidad longitudinal.</td></tr>
+  <tr><td>Donde Cm = 0: equilibrio estático.</td></tr>
+  <tr><td>Buen posicionamiento del centro de gravedad.</td></tr>
+</table>
+
+<h2>Tabla 9. CL/CD vs Ángulo de Ataque α</h2>
+<table>
+  <tr><td>Indica eficiencia aerodinámica.</td></tr>
+  <tr><td>Pico máximo en α ≈ 4°–6°.</td></tr>
+  <tr><td>Después del pico, disminuye por aumento de CD.</td></tr>
+  <tr><td>Valores negativos para α < 0° pueden ser errores o inestabilidad.</td></tr>
+</table>
+
+
+
+<p>
+  A continuación se presentan los cálculos aerodinámicos para el modelo simulado en el programa <strong>XFLR5</strong> para el ATR 72-600.
+</p>
+
+<p><strong>Parámetros del modelo considerados para los cálculos:</strong><br>
+<ul>
+  <li>Velocidad del viento: <strong>V = 16,0 m/s</strong></li>
+  <li>Densidad del aire: <strong>ρ = 1,225 kg/m<sup>3</sup></strong></li>
+  <li>Área alar: <strong>S = 0,0152 m<sup>2</sup></strong></li>
+  <li>Cuerda media aerodinámica: <strong>c = 0,008 m</strong></li>
+  <li>Viscosidad dinámica del aire: <strong>μ = 1.87 × 10<sup>-5</sup> Pa·s</strong></li>
+</ul>
+
+<p><strong>Cálculo del número de Reynolds</strong><br>
+<p>
+  <strong>Fórmula:</strong><br>
+  <span class="formula">Re = (ρ · V · c) / μ</span> <small>(1)</small>
+</p>
+<p class="calculation">
+  Re = (1.225 kg/m<sup>3</sup>) · (16 m/s) · (0.008 m) / (1.87 × 10<sup>-5</sup> Pa·s) = <strong>8,371</strong>
+</p>
+<p><strong>Número de Reynolds utilizado:</strong> 8,371</p>
+
+<p><strong>Fórmulas utilizadas</strong><br>
+<ul>
+  <li>
+    Sustentación:<br>
+    <span class="formula">L = ½ ρ V<sup>2</sup> S C<sub>L</sub></span> <small>(2)</small>
+  </li>
+  <li>
+    Resistencia:<br>
+    <span class="formula">D = ½ ρ V<sup>2</sup> S C<sub>D</sub></span> <small>(3)</small>
+  </li>
+  <li>
+    Momento aerodinámico:<br>
+    <span class="formula">M = ½ ρ V<sup>2</sup> S C<sub>m</sub></span> <small>(4)</small>
+  </li>
+</ul>
+
+<p><strong>Cálculos por Ángulo de Ataque</strong><br>
+
+<section class="angle-calc">
+  <h4>Para α = −6°</h4>
+  <ul>
+    <li>C<sub>L</sub> = −1.21329</li>
+    <li>C<sub>D</sub> = 0.09302</li>
+    <li>C<sub>m</sub> = 2.97596</li>
+  </ul>
+  <p class="calculation">
+    L = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (−1.21329) = <strong>−2.8917 N</strong><br>
+    D = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (0.09302) = <strong>0.2217 N</strong><br>
+    M = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (2.97596) = <strong>7.0927 N·m</strong>
+  </p>
+</section>
+
+<section class="angle-calc">
+  <h4>Para α = 0°</h4>
+  <ul>
+    <li>C<sub>L</sub> = −0.76019</li>
+    <li>C<sub>D</sub> = 0.03801</li>
+    <li>C<sub>m</sub> = 1.9311</li>
+  </ul>
+  <p class="calculation">
+    L = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (−0.76019) = <strong>−1.811 N</strong><br>
+    D = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (0.03801) = <strong>0.0905 N</strong><br>
+    M = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (1.9311) = <strong>4.6025 N·m</strong>
+  </p>
+</section>
+
+<section class="angle-calc">
+  <h4>Para α = 6°</h4>
+  <ul>
+    <li>C<sub>L</sub> = −0.29005</li>
+    <li>C<sub>D</sub> = 0.00771</li>
+    <li>C<sub>m</sub> = 0.825</li>
+  </ul>
+  <p class="calculation">
+    L = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (−0.29005) = <strong>−0.6912 N</strong><br>
+    D = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (0.00771) = <strong>0.01837 N</strong><br>
+    M = ½ · (1.225) · (16)<sup>2</sup> · (0.0152) · (0.825) = <strong>1.9662 N·m</strong>
+  </p>
+</section>
+
+<p>Con estos parámetros se puede representar una simulación, como se muestra en las figuras 16 y 17, a continuación.</p>
+<figure>
+  <img src="ATR 20.png" alt="Gráficas generales"><img src="ATR 21.png" alt="Gráficas generales">
+  <figcaption>Fig. 17. Gráficas de Representación de los Coeficientes.</figcaption>
+</figure>
+
+
+
+
+
+<h2 id="datos">Datos de Relevancia en el Funcionamiento y Operación del Sistema de Control de Vuelo en un ATR 72-600</h2>
+
+<section>
+  <h2>Control de Alabeo (ROLL)</h2>
+  <p>El control de alabeo se realiza mediante ruedas de control en la cabina (control wheels), con un recorrido angular de ±87°.</p>
+  <p>Los alerones tienen un recorrido máximo de 14° hacia arriba y 14° hacia abajo.</p>
+
+  <p><strong>Mecanismo</strong><br>
+  <p>El sistema opera de forma mecánica mediante conexión directa entre las ruedas de control y los alerones.</p>
+
+  <p><strong>Spring Tab</strong><br>
+  <p>Un spring tab proporciona asistencia mecánica proporcional a la carga aerodinámica aplicada. La deflexión del spring tab del alerón izquierdo puede variar ±6,7°, controlada eléctricamente desde interruptores ubicados en ambas ruedas. El tiempo total de recorrido es de aproximadamente 30 segundos.</p>
+</section>
+
+<section>
+  <h2>Control de Cabeceo (PITCH)</h2>
+  <p>El control de cabeceo se realiza mediante elevadores montados en el estabilizador horizontal. Cada columna de mando controla su respectivo elevador y está conectada mecánicamente con la columna opuesta mediante un sistema de acoplamiento.</p>
+
+  <p><strong>Deflexión de Elevadores y Columna de Mando</strong><br>
+  <ul>
+    <li>Elevadores: 23° hacia arriba y 13° hacia abajo.</li>
+    <li>Columna de mando: 11,25° hacia atrás y 6,75° hacia adelante.</li>
+  </ul>
+
+  <p><strong>Trim de Cabeceo</strong><br>
+  <p>El trimado se realiza modificando la posición neutra de los trim tabs de ambos elevadores:</p>
+  <ul>
+    <li>Movimiento del trim tab: 5° hacia arriba, 1,5° hacia abajo.</li>
+    <li>Activación desde interruptores en las ruedas y en modo STBY desde el pedestal.</li>
+    <li>Tiempo total de recorrido: 30 segundos.</li>
+  </ul>
+
+  <p><strong>Protección de Pérdida (Stall)</strong><br>
+  <p>El avión está equipado con:</p>
+  <ul>
+    <li><strong>Stick Shaker:</strong> vibra la columna cuando se alcanza un ángulo de ataque crítico.</li>
+    <li><strong>Stick Pusher:</strong> empuja la columna automáticamente si el ángulo de ataque aumenta (solo en canal del capitán).</li>
+  </ul>
+  <p>En caso de bloqueo del sistema de cabeceo, es posible desacoplar las columnas aplicando una fuerza diferencial de 52 daN.</p>
+</section>
+
+<section>
+  <h2>Control de Guiñada (YAW)</h2>
+  <p>Se realiza mediante pedales que accionan el timón de dirección (rudder). Se asume un rango de deflexión de ±25°–30°.</p>
+  <p>El timón tiene capacidad de trim, activado por interruptores eléctricos. Ambos deben mantenerse en la misma dirección para activarlo.</p>
+</section>
+
+<section>
+  <h2>Detalles Operativos Relevantes</h2>
+  <ul>
+    <li>El trim normal y el STBY no deben usarse al mismo tiempo.</li>
+    <li>Si ocurre desincronización de trim tabs, el sistema CCAS genera una alerta (Pitch Trim Asym).</li>
+    <li>Si se activa el trim eléctrico, el AP se desconecta.</li>
+    <li>Un indicador de posición muestra la deflexión del actuador derecho (sector verde: 0° a 2,5° hacia arriba, recomendado para despegue).</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="función">Funcionamiento y Análisis del Control</h2>
+
+  <h3>1. Componentes del Sistema</h3>
+  <p><strong>Servo SG90 – 9g (Micro Servo)</strong></p>
+  <table>
+    <tr><th>Especificación</th><th>Valor</th></tr>
+    <tr><td>Voltaje de operación</td><td>4.8 V – 6.0 V</td></tr>
+    <tr><td>Torque nominal (@ 4.8 V)</td><td>1.8 kg·cm</td></tr>
+    <tr><td>Velocidad (@ 4.8 V)</td><td>0.12 s / 60°</td></tr>
+    <tr><td>Ángulo de giro</td><td>0°–180° (PWM)</td></tr>
+    <tr><td>Peso</td><td>9 g</td></tr>
+  </table>
+  <p><strong>Conversión:</strong> 1.8 kg·cm = 0.1766 N·m</p>
+
+  <p><strong>Sistema RC – FlySky FS-i6X con receptor FS-iA10B</strong></p>
+  <ul>
+    <li>Tipo: Transmisor RC digital 2.4 GHz, 10 canales (AFHDS 2A)</li>
+    <li>Resolución PWM: 1000 μs a 2000 μs</li>
+  </ul>
+
+  <h3>2. Superficies de Control en el Modelo</h3>
+  <ul>
+    <li>Alerones: 3 cm × 8 cm → A = 0.0024 m², r = 0.015 m</li>
+    <li>Elevadores: 3 cm × 8 cm → r = 0.015 m</li>
+    <li>Rudder: 3 cm × 10 cm → A = 0.0030 m², r = 0.015 m</li>
+  </ul>
+
+  <h3>3. Cálculo de Torque Requerido</h3>
+  <p>Fórmulas:</p>
+  <pre><code>F = 0.5 · ρ · V² · A · CL(δ)
+τ = F · r</code></pre>
+  <p>Datos: ρ = 1.225 kg/m³, V = 16 m/s, CL(δ) ≈ 0.1 · δ</p>
+  <ul>
+    <li>Alerones: τ = 0.00564 N·m</li>
+    <li>Elevadores: τ = 0.00564 N·m</li>
+    <li>Rudder: τ = 0.00705 N·m</li>
+  </ul>
+
+  <h3>4. Comparación con el Torque Disponible (Servo SG90)</h3>
+  <table>
+    <tr><th>Superficie</th><th>Torque Requerido</th><th>Torque Disponible</th><th>Margen</th></tr>
+    <tr><td>Alerón</td><td>0.00564</td><td>0.1766</td><td>∼ 31×</td></tr>
+    <tr><td>Elevador</td><td>0.00564</td><td>0.1766</td><td>∼ 31×</td></tr>
+    <tr><td>Rudder</td><td>0.00705</td><td>0.1766</td><td>∼ 25×</td></tr>
+  </table>
+
+  <h3>5. Funcionamiento del Sistema RC y Cableado de Servos</h3>
+  <p><strong>Flujo del sistema:</strong> Transmisor FS-i6X → Receptor FS-iA10B → Servos SG90</p>
+  <ul>
+    <li>Transmisor genera señales digitales proporcionales al movimiento</li>
+    <li>Receptor convierte las señales en pulsos PWM (1000–2000 μs)</li>
+  </ul>
+
+  <h4>Cableado de los servos:</h4>
+  <ul>
+    <li>Marrón/Negro: -V, GND</li>
+    <li>Rojo: +V (4.8V–6V)</li>
+    <li>Amarillo/Naranja: Señal (PWM)</li>
+  </ul>
+
+  <h4>Esquema de conexión al receptor:</h4>
+  <ul>
+    <li>Canal 2: Alerón derecho</li>
+    <li>Canal 1: Elevador</li>
+    <li>Canal 5: Rudder</li>
+    <li>Canal 6: Alerón izquierdo (opcional)</li>
+  </ul>
+  <p>Alimentación: batería de litio de 3.7V a 2000mA (se recomienda usar BEC de 5V).</p>
+</section>
+
+<section>
+  <h2 id="resultado">Discusión de Resultados</h2>
+  <p><strong>1.</strong> El desarrollo del modelo a escala 1:33 del ATR 72-600 permitió evaluar la efectividad de un sistema de control de vuelo basado en cables y servomotores SG90, frente a las especificaciones y condiciones de operación del ATR real. Aunque el modelo no replica completamente la complejidad del sistema fly-by-wire ni los mecanismos asistidos por spring tabs del avión real (soportes adicionales en las superficies de control para facilitar el vuelo), se logró una representación funcional con resultados aerodinámicos coherentes para condiciones simuladas.</p>
+<p><strong>2.</strong> Desde el punto de vista aerodinámico, los coeficientes de sustentación o lift (CL), resistencia o drag (CD) y momento (Cm) del modelo simulado mostraron tendencias similares a las observadas en perfiles aerodinámicos reales. Por ejemplo, para un ángulo de ataque de 6°, el modelo alcanzó un CL de -0.29 y un CD de 0.00771, lo que indica un flujo aerodinámico limpio y bajo arrastre, aunque el valor negativo de CL sugiere una configuración invertida o problemas de orientación en la simulación. En contraste, el ATR 72-600 real opera con CL positivos en rangos de 0.5–1.2 durante vuelo nivelado, y presenta una eficiencia CL/CD inferior en configuraciones de alta carga. Sin embargo, la eficiencia máxima del modelo fue de -37.6, un valor no físico que posiblemente se deba a errores de mallado o simplificaciones del software XFLR5.
+</p>
+<p><strong>3.</strong> Respecto a los actuadores, los cálculos indicaron que los servos SG90 tienen un margen de torque entre 25 y 31 veces superior al requerido para mover las superficies del modelo. Este margen es significativo y garantiza una operación sin riesgo de sobrecarga mecánica. En el ATR real, las superficies están asistidas por spring tabs y sistemas mecánicos complejos, lo que permite controlar cargas aerodinámicas reales mucho mayores con una fuerza humana limitada. En el modelo, esa relación se simula eficazmente con servos, aunque el sistema no incorpora retroalimentación de carga ni mecanismos de desacoplamiento como los presentes en el ATR.</p>
+<p><strong>4.</strong> Finalmente, el control de vuelo mediante radiofrecuencia y señales PWM replicó adecuadamente el comportamiento esperado, con movimientos precisos y sincronizados. Aunque no se alcanzan los grados máximos de deflexión del ATR (por ejemplo, ±14° en alerones o ±23° en elevadores),a causa de las limitaciones en el giro de los servomotores que se están implementando en la construcción de este modelo, esto, sumado con la unión de los cables a las superficies de control considerando que pueda existir diferencias de tensión entre un extremo del servomotor y el otro provocan dicho cambio en la deflexión, aun así,  se mantiene una respuesta proporcional suficiente para verificar la lógica del sistema de control.
+</p>
+<p><strong>5.</strong> En resumen, el modelo escala cumple su objetivo educativo al simular con fidelidad razonable el comportamiento básico de un sistema de control por cables. Si bien las limitaciones de escala, materiales y software influyen en la precisión de los resultados, la comparación con los parámetros reales del ATR 72-600 demuestra que las decisiones de diseño fueron acertadas y funcionales para un desempeño favorable en la recolección de datos y óptima en cuanto a relación costo beneficio para este modelo.
+</p>
 
 
 
 
 
 
-
-
-
-
+</section>
 
 
 
