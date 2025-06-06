@@ -274,31 +274,23 @@
         <div class="sidebar-content">
             <h2>Contenido</h2>
             <ul>
+                <li><a href="#resumen">Resumen</a></li>              
                 <li><a href="#intro">Introducción</a></li>
                 <li><a href="#marco">Marco Teórico</a></li>
-                <ul>
-                    <li><a href="#sistema">Sistema de control de vuelo</a></li>
-                    <li><a href="#control">Computadora de control de vuelo</a></li>
-                    <li><a href="#superficie">Superficies de control</a></li>
-                    <li><a href="#actuador">Sensores y actuadores</a></li>
-                    <li><a href="#luces">Sistemas de luces aeronáuticas</a></li>
-                    <ul>
-                        <li><a href="#navegacion">Luces de navegación (posición)</a></li>
-                        <li><a href="#beacon">Luces beacon (Anticolisión roja)</a></li>
-                        <li><a href="#estroboscopica">Luces estroboscópicas (Anticolisión blanca)</a></li>
-                    </ul>
-                </ul>
+                <li><a href="#datos">Datos de relevancia en el funcionamiento y operación del sistema de control de vuelo en un ATR 72-600</a></li>                
                 <li><a href="#procedimiento">Procedimiento</a></li>
                 <li><a href="#etapas">Etapas del proyecto</a></li>
                 <li><a href="#eléctrico">Diseño del circuito eléctrico</a></li>
                 <li><a href="#aerodinámico">Análisis aerodinámico</a></li>
                 <li><a href="#grafica">Análisis de las gráficas</a></li>
-                <li><a href="#datos">Datos de relevancia en el funcionamiento y operación del sistema de control de vuelo en un ATR 72-600</a></li>
                 <li><a href="#función">Funcionamiento y análisis del control</a></li>
                 <li><a href="#resultado">Discusión de resultados</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
             </ul>
         </div>
     </div>
+
+  
 
     <script>
         function toggleSidebar() {
@@ -307,10 +299,27 @@
     </script>
 </body>
 
+<style>
+  .animated-title {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideIn 2s ease-out forwards;
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 
     <div class="container">
-        <h1>Modelo de las superficies de control de vuelo y luces principales de un ATR-72-600</h1>
-       <h2 id="intro">INTRODUCTION</h2>
+        <h1 class="animated-title">Modelo de las superficies de control de vuelo y luces principales de un ATR-72-600</h1>
+         <h2 id="resumen">Resumen</h2>
+        <p>En este informe se presenta el diseño y montaje de un sistema de control de vuelo basado en servomotores y cables para una maqueta a escala 1:33 de un ATR-72, dicho sistema está compuesto de un transmisor que se encarga de enviar los comandos deseados desde un control remoto hasta un receptor, el cual se encuentra en el avión y convierte la señal para que los servos muevan las superficies de control de como se desea. Se realiza un análisis aerodinámico para entender como se comportaría la aeronave al inducir un movimiento con las superficies y por último se concluye la viabilidad del sistema con base en las dificultades y ventajas que presenta este sistema. Adicionalmente se presenta el diseño y montaje de un circuito eléctrico para las luces principales de un avión (haciendo referencia a las luces que llevaría encendidas durante una operación nocturna normal).</p>
+
+       <h2 id="intro">Introducción</h2>
         <p>Para lograr un vuelo seguro y eficiente es fundamental contar con un sistema adecuado para controlar la aeronave, en este caso el ATR 72-600. Esto se consigue mediante los sistemas de control de vuelo, los cuales están conformados por un conjunto de superficies que trabajan juntas para dirigir y estabilizar la aeronave. Estas se dividen en tres grupos: superficies primarias (alerones, elevadores y timón), superficies secundarias (aletas de compensación) y superficies de alta sustentación (flaps y slats).</p>
 
         <p>Existen diversas maneras de construir un sistema para este propósito; la más común en aeronaves antiguas y de pequeño tamaño es el sistema de cables y poleas, debido a la simplicidad de fabricación, bajo peso en comparación con un sistema hidráulico y su funcionamiento independiente de computadoras de vuelo, convirtiéndolo en una opción ideal de un sistema óptimo para aeronaves ligeras con bajos costos operativos.</p>
@@ -360,10 +369,71 @@
 Son luces blancas que emiten destellos intermitentes de alta intensidad para aumentar la visibilidad de una aeronave en caso de neblina, sirve para disuadir aves en la trayectoria de vuelo evitando incidentes con fauna, se encuentran en los extremos de las alas y en la cola de la aeronave.<br>
 
 
-<h2 id="procedimiento">Procedimiento</h2>
-<p>Para el desarrollo del sistema de control de vuelo por cable y el sistema de iluminación se elaboró una estructura a escala del ATR 72-600 con dimensiones de … Se utilizaron materiales ligeros como plástico de botella, periódico, porcelanicrón, cartón, bajalenguas, palos de pincho y componentes mecatrónicos para garantizar la facilidad del montaje.</p>
 
-<p>Se conectaron tres servomotores al receptor del control inalámbrico realizando pruebas funcionales del movimiento de cada superficie. Para el sistema de iluminación se elaboró un diagrama considerando la ubicación y función de cada tipo de luz.</p>
+
+<h2 id="datos">Datos de Relevancia en el Funcionamiento y Operación del Sistema de Control de Vuelo en un ATR 72-600</h2>
+
+<section>
+  <h2>Control de Alabeo (ROLL)</h2>
+  <p>El control de alabeo se realiza mediante ruedas de control en la cabina (control wheels), con un recorrido angular de ±87°.</p>
+  <p>Los alerones tienen un recorrido máximo de 14° hacia arriba y 14° hacia abajo.</p>
+
+  <p><strong>Mecanismo</strong><br>
+  <p>El sistema opera de forma mecánica mediante conexión directa entre las ruedas de control y los alerones.</p>
+
+  <p><strong>Spring Tab</strong><br>
+  <p>Un spring tab proporciona asistencia mecánica proporcional a la carga aerodinámica aplicada. La deflexión del spring tab del alerón izquierdo puede variar ±6,7°, controlada eléctricamente desde interruptores ubicados en ambas ruedas. El tiempo total de recorrido es de aproximadamente 30 segundos.</p>
+</section>
+
+<section>
+  <h2>Control de Cabeceo (PITCH)</h2>
+  <p>El control de cabeceo se realiza mediante elevadores montados en el estabilizador horizontal. Cada columna de mando controla su respectivo elevador y está conectada mecánicamente con la columna opuesta mediante un sistema de acoplamiento.</p>
+
+  <p><strong>Deflexión de Elevadores y Columna de Mando</strong><br>
+  <ul>
+    <li>Elevadores: 23° hacia arriba y 13° hacia abajo.</li>
+    <li>Columna de mando: 11,25° hacia atrás y 6,75° hacia adelante.</li>
+  </ul>
+
+  <p><strong>Trim de Cabeceo</strong><br>
+  <p>El trimado se realiza modificando la posición neutra de los trim tabs de ambos elevadores:</p>
+  <ul>
+    <li>Movimiento del trim tab: 5° hacia arriba, 1,5° hacia abajo.</li>
+    <li>Activación desde interruptores en las ruedas y en modo STBY desde el pedestal.</li>
+    <li>Tiempo total de recorrido: 30 segundos.</li>
+  </ul>
+
+  <p><strong>Protección de Pérdida (Stall)</strong><br>
+  <p>El avión está equipado con:</p>
+  <ul>
+    <li><strong>Stick Shaker:</strong> vibra la columna cuando se alcanza un ángulo de ataque crítico.</li>
+    <li><strong>Stick Pusher:</strong> empuja la columna automáticamente si el ángulo de ataque aumenta (solo en canal del capitán).</li>
+  </ul>
+  <p>En caso de bloqueo del sistema de cabeceo, es posible desacoplar las columnas aplicando una fuerza diferencial de 52 daN.</p>
+</section>
+
+<section>
+  <h2>Control de Guiñada (YAW)</h2>
+  <p>Se realiza mediante pedales que accionan el timón de dirección (rudder). Se asume un rango de deflexión de ±25°–30°.</p>
+  <p>El timón tiene capacidad de trim, activado por interruptores eléctricos. Ambos deben mantenerse en la misma dirección para activarlo.</p>
+</section>
+
+<section>
+  <h2>Detalles Operativos Relevantes</h2>
+  <ul>
+    <li>El trim normal y el STBY no deben usarse al mismo tiempo.</li>
+    <li>Si ocurre desincronización de trim tabs, el sistema CCAS genera una alerta (Pitch Trim Asym).</li>
+    <li>Si se activa el trim eléctrico, el AP se desconecta.</li>
+    <li>Un indicador de posición muestra la deflexión del actuador derecho (sector verde: 0° a 2,5° hacia arriba, recomendado para despegue).</li>
+  </ul>
+</section>
+
+
+
+<h2 id="procedimiento">Procedimiento</h2>
+<p>Para el desarrollo del sistema de control de vuelo por cable y el sistema de iluminacion se elaboró una estructura a escala 1:33 del ATR 72-600. Se utilizaron materiales como plastico de botella, periodico , porcelanicron, cartón, palos bajalenguas, palos de pincho y componentes mecatrónicos para garantizar la facilidad del montaje. Se conectaron tres servomotores al receptor del control inalámbrico realizando, pruebas funcionales del movimiento de cada superficie, para el sistema de iluminación se elaboró un circuito considerando la ubicación y función de cada tipo de luz.   </p>
+
+<p>El proyecto se divide en dos sistemas, el sistema de control y el sistema de luces que se utilizan en la fase de crucero, cada uno de estos sistemas pueden ser analizados de manera separada.</p>
 <h2 id="etapas">Etapas del proyecto</h2>
 
 <ul>
@@ -685,63 +755,6 @@ Como se puede ver en la figura 4, el sistema está compuesto por 3 servos, cada 
 
 
 
-<h2 id="datos">Datos de Relevancia en el Funcionamiento y Operación del Sistema de Control de Vuelo en un ATR 72-600</h2>
-
-<section>
-  <h2>Control de Alabeo (ROLL)</h2>
-  <p>El control de alabeo se realiza mediante ruedas de control en la cabina (control wheels), con un recorrido angular de ±87°.</p>
-  <p>Los alerones tienen un recorrido máximo de 14° hacia arriba y 14° hacia abajo.</p>
-
-  <p><strong>Mecanismo</strong><br>
-  <p>El sistema opera de forma mecánica mediante conexión directa entre las ruedas de control y los alerones.</p>
-
-  <p><strong>Spring Tab</strong><br>
-  <p>Un spring tab proporciona asistencia mecánica proporcional a la carga aerodinámica aplicada. La deflexión del spring tab del alerón izquierdo puede variar ±6,7°, controlada eléctricamente desde interruptores ubicados en ambas ruedas. El tiempo total de recorrido es de aproximadamente 30 segundos.</p>
-</section>
-
-<section>
-  <h2>Control de Cabeceo (PITCH)</h2>
-  <p>El control de cabeceo se realiza mediante elevadores montados en el estabilizador horizontal. Cada columna de mando controla su respectivo elevador y está conectada mecánicamente con la columna opuesta mediante un sistema de acoplamiento.</p>
-
-  <p><strong>Deflexión de Elevadores y Columna de Mando</strong><br>
-  <ul>
-    <li>Elevadores: 23° hacia arriba y 13° hacia abajo.</li>
-    <li>Columna de mando: 11,25° hacia atrás y 6,75° hacia adelante.</li>
-  </ul>
-
-  <p><strong>Trim de Cabeceo</strong><br>
-  <p>El trimado se realiza modificando la posición neutra de los trim tabs de ambos elevadores:</p>
-  <ul>
-    <li>Movimiento del trim tab: 5° hacia arriba, 1,5° hacia abajo.</li>
-    <li>Activación desde interruptores en las ruedas y en modo STBY desde el pedestal.</li>
-    <li>Tiempo total de recorrido: 30 segundos.</li>
-  </ul>
-
-  <p><strong>Protección de Pérdida (Stall)</strong><br>
-  <p>El avión está equipado con:</p>
-  <ul>
-    <li><strong>Stick Shaker:</strong> vibra la columna cuando se alcanza un ángulo de ataque crítico.</li>
-    <li><strong>Stick Pusher:</strong> empuja la columna automáticamente si el ángulo de ataque aumenta (solo en canal del capitán).</li>
-  </ul>
-  <p>En caso de bloqueo del sistema de cabeceo, es posible desacoplar las columnas aplicando una fuerza diferencial de 52 daN.</p>
-</section>
-
-<section>
-  <h2>Control de Guiñada (YAW)</h2>
-  <p>Se realiza mediante pedales que accionan el timón de dirección (rudder). Se asume un rango de deflexión de ±25°–30°.</p>
-  <p>El timón tiene capacidad de trim, activado por interruptores eléctricos. Ambos deben mantenerse en la misma dirección para activarlo.</p>
-</section>
-
-<section>
-  <h2>Detalles Operativos Relevantes</h2>
-  <ul>
-    <li>El trim normal y el STBY no deben usarse al mismo tiempo.</li>
-    <li>Si ocurre desincronización de trim tabs, el sistema CCAS genera una alerta (Pitch Trim Asym).</li>
-    <li>Si se activa el trim eléctrico, el AP se desconecta.</li>
-    <li>Un indicador de posición muestra la deflexión del actuador derecho (sector verde: 0° a 2,5° hacia arriba, recomendado para despegue).</li>
-  </ul>
-</section>
-
 <section>
   <h2 id="función">Funcionamiento y Análisis del Control</h2>
 
@@ -804,6 +817,9 @@ Como se puede ver en la figura 4, el sistema está compuesto por 3 servos, cada 
   </ul>
 
   <h4>Esquema de conexión al receptor:</h4>
+   <img src="ATR 25.png" alt="Imagen 1" />
+         <p><span class="fig-caption">Fig. 18. Esquema De Coneccion De Servos Al Receptor.
+</span></p>
   <ul>
     <li>Canal 2: Alerón derecho</li>
     <li>Canal 1: Elevador</li>
@@ -811,6 +827,14 @@ Como se puede ver en la figura 4, el sistema está compuesto por 3 servos, cada 
     <li>Canal 6: Alerón izquierdo (opcional)</li>
   </ul>
   <p>Alimentación: batería de litio de 3.7V a 2000mA (se recomienda usar BEC de 5V).</p>
+  <p>El sistema compuesto por el transmisor FS-i6X, el receptor FS-iA10B y los servos SG90 de 9g son técnicamente adecuados para controlar de forma precisa y segura las superficies móviles del modelo a escala del ATR 72-600. El torque disponible excede por amplio margen el requerido incluso en condiciones aerodinámicas exigentes, asegurando buena respuesta y estabilidad.
+</p>
+   <img src="ATR 23.png" alt="Imagen 1" />
+         <p><span class="fig-caption">Fig. 19. Esquema Del Control FlySky.
+</span></p>
+   <img src="ATR 24.png" alt="Imagen 1" />
+         <p><span class="fig-caption">Fig. 20. Esquema Completo Del Receptor.
+</span></p>
 </section>
 
 <section>
@@ -823,13 +847,57 @@ Como se puede ver en la figura 4, el sistema está compuesto por 3 servos, cada 
 </p>
 <p><strong>5.</strong> En resumen, el modelo escala cumple su objetivo educativo al simular con fidelidad razonable el comportamiento básico de un sistema de control por cables. Si bien las limitaciones de escala, materiales y software influyen en la precisión de los resultados, la comparación con los parámetros reales del ATR 72-600 demuestra que las decisiones de diseño fueron acertadas y funcionales para un desempeño favorable en la recolección de datos y óptima en cuanto a relación costo beneficio para este modelo.
 </p>
-
-
-
-
-
-
+<h2 id="conclusion">Conclusión</h2>
+<p>Los sistemas de control de vuelo son cruciales para el control del vuelo. Estos son sistemas complejos que se componen de múltiples partes las cuales deben trabajar en armonía permitiendo que se logré un vuelo controlado, esto se logra por medio de múltiples sistemas tanto mecánicos como eléctricos (dependiendo de la aeronave). La construcción de un sistema de control permite entender el funcionamiento de estos, dando a conocer que se extiende no solo a la parte mecánica.</p>
+<p>Durante la fabricación de un sistema de control de vuelo a base de cables, es decir, donde la superficie de control no es movida directamente por un servo, sino, por un sistema intermediario puede traer dificultades, tales como, mayor espacio requerido para poder instalar el sistema de cables, provocando que sea más complejo acomodar otros sistemas dentro de la aeronave. </p>
+<p>Adicionalmente se encontraron problemas como la alta fricción en ciertos puntos, lo que impedía el correcto movimiento de las superficies de control, pues, debido a esto los servos no tenían la fuerza suficiente para mover la superficie. 
+En ocasiones es mejor colocar un servo que se encargue de mover cada alerón en vez de uno solo que muevan los dos alerones, si bien el montar un solo servo para mover ambas superficies permite colocarlo dentro del fuselaje reduciendo el arrastre misceláneo  y reducir peso, esta mejora no es significativa, pues, si se tiene en cuenta el peso de estos (9g) termina siendo igual de pesado colocar el sistema de transmisión de movimiento, además que si se tiene en cuenta el tamaño y lo que sobre sale del servo si este se coloca en el ala el arrastre misceláneo es muy pequeño, resultando en que colar un único servo solo sea viable al momento de hacer modelos muy grandes y trabajar con actuadores mucho más potentes y pesados.</p>
+<p>Otro problema que se puede presentar es que al utilizar cables flexibles como el nailon es necesario asegurarse que este quede del todo tensado, pues, si este no se encuentra tensado correctamente puede llegar a hacer que el movimiento de la superficie de control no sea el esperado, es decir, que esta se mueva menos de lo esperado. 
+El sistema de luces es de gran importancia para todas las personas involucradas en un vuelo, pues, este hace que la aeronave sea más visible lo que evita accidentes, este sistema tiene un gran consumo energético lo que puede llevar a problemas para poder alimentarlo de manera eficiente. En el caso de las luces estroboscópicas se encontraron problemas para que estas brillen con la intensidad que deberían, resultando en un rendimiento por debajo de lo esperado, esto se debe a que estás están conectadas en serie además de compartir fuente de alimentación con las luces de navegación. Para solucionar este problema se podrían conectar en paralelo y utilizar una fuente que alimente únicamente a las 3 luces.</p>
 </section>
+
+  <!-- Footer desligado, de ancho completo -->
+  <footer style="width: 100%; background-color: #111; color: #eee; font-size: 14px; padding: 40px 0;">
+
+    <!-- Contenedor interno -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+
+      <!-- Autores -->
+      <section style="margin-bottom: 30px;">
+        <h3 style="font-size: 18px; color: #fff;">Autores</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; color: #ccc;">
+          <li><strong style="color: #eee;">Machado Laura</strong> – <a href="mailto:ldmachadov@libertadores.edu.co" style="color: #ccc;">ldmachadov@libertadores.edu.co</a></li>
+          <li><strong style="color: #eee;">Mendez Juan</strong> – <a href="mailto:jdmendezm@libertadores.edu.co" style="color: #ccc;">jdmendezm@libertadores.edu.co</a></li>
+          <li><strong style="color: #eee;">Perez Juan</strong> – <a href="mailto:jsperezr01@libertadores.edu.co" style="color: #ccc;">jsperezr01@libertadores.edu.co</a></li>
+          <li><strong style="color: #eee;">Riaño Luis</strong> – <a href="mailto:ldrianol@libertadores.edu.co" style="color: #ccc;">ldrianol@libertadores.edu.co</a></li>
+          <li><strong style="color: #eee;">Saúl Jesús</strong> – <a href="mailto:jrsaulg@libertadores.edu.co" style="color: #ccc;">jrsaulg@libertadores.edu.co</a></li>
+        </ul>
+        <p style="margin-top: 10px;"><strong style="color: #eee;">Profesor:</strong> Velásquez David</p>
+      </section>
+
+<!-- Referencias -->
+<section style="margin-top: 30px;">
+  <h3 style="font-size: 18px; color: #fff;">Referencias</h3>
+  <ol style="padding-left: 20px; line-height: 1.8; color: #ccc;">
+    <li>ATR, <em>ATR 72 Flight Crew Operating Manual</em>, 1999. [Enlace]. Disponible en:  
+      <a href="https://www.avialogs.com/reader.php?jid=985#p=21" target="_blank" style="color: #ccc;">https://www.avialogs.com/reader.php?jid=985#p=21</a>
+    </li>
+    <li>Çengel, Y. A., Cimbala, J. M., Skarina, S. F. (2012). <em>Mecánica de fluidos: fundamentos y aplicaciones</em>.</li>
+    <li>A. Carmona, <em>Aerodinámica y actuaciones de un avión</em>, 10ª ed., Madrid, España: Paraninfo, 2000.</li>
+    <li>ATA 27 Flight Controls. Scribd. [En línea]. Disponible en:  
+      <a href="https://es.scribd.com/document/684726112/ata-27-flight-controls" target="_blank" style="color: #ccc;">https://es.scribd.com/document/684726112/ata-27-flight-controls</a>  
+      [Accedido: 5-jun-2025].
+    </li>
+  </ol>
+</section>
+
+
+    </div>
+  </footer>
+
+</body>
+</html>
+
 
 
 
